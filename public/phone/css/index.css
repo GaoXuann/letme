@@ -16,3 +16,70 @@
 .my-footer .mui-tab-item .mui-active {
   color: purple;
 }
+.mui-part ul {
+  width: 100%;
+  padding: 10px;
+}
+.mui-part ul li {
+  float: left;
+  width: 33.3%;
+}
+.mui-part ul li img {
+  width: 100%;
+}
+.brand {
+  width: 100%;
+  padding: 5px;
+}
+.brand img {
+  width: 100%;
+}
+.brand li {
+  float: left;
+  width: 25%;
+}
+.brand li img {
+  width: 100%;
+}
+.product {
+  width: 100%;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.product img {
+  width: 100%;
+}
+.product li {
+  float: left;
+  width: 50%;
+  padding: 5px;
+}
+.product li a {
+  box-shadow: 0 0 5px #ccc;
+  padding: 10px;
+  display: block;
+  text-align: center;
+}
+.product li a p {
+  font-size: 14px;
+}
+.product li a span {
+  color: #8f8f94;
+}
+.product li a span:nth-of-type(1) {
+  color: #e92322;
+}
+.product li a span:nth-of-type(2) {
+  text-decoration: line-through;
+}
+.product li a input {
+  display: block;
+  margin: auto;
+  margin-top: 5px;
+  color: #fff;
+  background-color: #e92322;
+  padding: 5px 10px;
+}
+.product li img {
+  width: 100%;
+}

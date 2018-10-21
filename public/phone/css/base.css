@@ -1,23 +1,44 @@
-html,body,p,a,h3,img,li{
+html,
+body,
+p,
+a,
+h3,
+img,
+li,
+ul,
+span {
     padding: 0;
     margin: 0;
 }
-a{
-  text-decoration: none;
+
+body {
+    background-color: #fff;
+    font-size: 14px;
+    color: #8f8f94;
 }
-li{
-  list-style: none;
+
+a {
+    text-decoration: none;
 }
-img{
-  display: block;
+
+li {
+    list-style: none;
 }
-.clearfix:before,.clearfix:after { 
-  content:"";
-  display:table; 
+
+img {
+    display: block;
 }
+
+.clearfix:before,
 .clearfix:after {
- clear:both;
+    content: "";
+    display: table;
 }
+
+.clearfix:after {
+    clear: both;
+}
+
 .clearfix {
-  *zoom:1;
+    *zoom: 1;
 }
