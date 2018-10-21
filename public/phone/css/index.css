@@ -1,0 +1,18 @@
+.my-header {
+  background-color: #e92322;
+}
+.my-header .mui-title {
+  color: #fff;
+}
+.my-header .mui-icon-search {
+  color: #fff;
+}
+.my-footer {
+  background-color: #e92322;
+}
+.my-footer .mui-tab-item {
+  color: #fff;
+}
+.my-footer .mui-tab-item .mui-active {
+  color: purple;
+}
