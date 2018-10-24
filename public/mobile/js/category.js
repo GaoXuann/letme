@@ -1,54 +1,53 @@
-$(function(){
+$(function() {
 
-	$.ajax({
-		type:'get',
-		url:'/category/queryTopCategory',
-		success:function(result){
-			
-			$('#leftCate').html(template('leftCateTpl',{data:result.rows}))
+    $.ajax({
+        type: 'get',
+        url: '/category/queryTopCategory',
+        success: function(result) {
 
-			if(result.rows.length > 0){
+            $('#leftCate').html(template('leftCateTpl', { data: result.rows }))
 
-				var id = result.rows[0].id;
+            if (result.rows.length > 0) {
 
-				$.ajax({
-					type:'get',
-					url:'/category/querySecondCategory',
-					data:{
-						id:id
-					},
-					success:function(result){
-						$('#rightCate').html(template('rightCateTpl',{data:result.rows}))
+                var id = result.rows[0].id;
 
-						$('#leftCate').find('a:first-child').addClass('active');
+                $.ajax({
+                    type: 'get',
+                    url: '/category/querySecondCategory',
+                    data: {
+                        id: id
+                    },
+                    success: function(result) {
+                        $('#rightCate').html(template('rightCateTpl', { data: result.rows }))
 
-					}
-				})
+                        $('#leftCate').find('a:first-child').addClass('active');
+                    }
+                })
 
-			}
+            }
 
-		}
-	});
-
+        }
+    });
 
 
-	$('body').on('tap','.getSecond',function(){
-		
-		var id = $(this).attr('data-id');
 
-		$(this).addClass('active').siblings().removeClass('active');
+    $('body').on('tap', '.getSecond', function() {
 
-		$.ajax({
-			type:'get',
-			url:'/category/querySecondCategory',
-			data:{
-				id:id
-			},
-			success:function(result){
-				$('#rightCate').html(template('rightCateTpl',{data:result.rows}))
-			}
-		})
+        var id = $(this).attr('data-id');
 
-	});
+        $(this).addClass('active').siblings().removeClass('active');
+
+        $.ajax({
+            type: 'get',
+            url: '/category/querySecondCategory',
+            data: {
+                id: id
+            },
+            success: function(result) {
+                $('#rightCate').html(template('rightCateTpl', { data: result.rows }))
+            }
+        })
+
+    });
 
 })

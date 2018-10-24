@@ -1,6 +1,9 @@
 .my-header {
   background-color: #e92322;
 }
+.my-header .mui-icon-left-nav {
+  color: #fff;
+}
 .my-header .mui-title {
   color: #fff;
 }
