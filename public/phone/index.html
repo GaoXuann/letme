@@ -9,10 +9,19 @@
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="assets/fontAwesome/css/font-awesome.min.css">
+    <script src="./js/common.js"></script>
     <script src="assets/mui/js/mui.min.js"></script>
 </head>
 
 <body class="mui-android mui-android-6 mui-android-6-0">
+    <script>
+        mui('body').on('tap', 'a', function() {
+            mui.openWindow({
+                url: this.href
+            })
+
+        });
+    </script>
     <!-- 头部 -->
     <header class="mui-bar mui-bar-nav my-header">
         <h1 class="mui-title">在线购</h1>

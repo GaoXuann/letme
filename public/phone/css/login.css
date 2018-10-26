@@ -1,4 +1,6 @@
-.my-login {}
+.mui-scroll-wrapper {
+    padding-top: 44px;
+}
 
 .my-login .login-button {
     height: auto;
@@ -17,7 +19,18 @@
     display: block;
     width: 100%;
     margin-top: 20px;
-    background: ##e92322;
+    background: #e92322;
+}
+
+.login-btn {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    background: #e92322;
+}
+
+.mui-btn-primary {
+    border: none;
 }
 
 .my-login .register {
@@ -25,13 +38,13 @@
     text-align: right;
     padding-right: 10px;
     margin-top: 20px;
-    color: #006699;
+    color: #e92322;
 }
 
 .my-login .getCode {
     position: absolute;
     right: 10px;
     top: 50%;
-    color: #006699;
+    color: #e92322;
     transform: translateY(-50%);
 }

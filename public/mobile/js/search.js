@@ -1,51 +1,51 @@
-$(function(){
+$(function() {
 
-	$('#searchBtn').on('click',function(){
+    $('#searchBtn').on('click', function() {
 
-		var keyword = $('#keyword').val();
+        var keyword = $('#keyword').val();
 
-		if(!keyword){
+        if (!keyword) {
 
-			alert('请输入关键字');
+            alert('请输入关键字');
 
-			return;
+            return;
 
-		}
+        }
 
-		if(localStorage.getItem('keywords')){
+        if (localStorage.getItem('keywords')) {
 
-			var keywords = JSON.parse(localStorage.getItem('keywords'));
+            var keywords = JSON.parse(localStorage.getItem('keywords'));
 
-			keywords.push(keyword);
+            keywords.push(keyword);
 
-			localStorage.setItem('keywords',JSON.stringify(keywords));
+            localStorage.setItem('keywords', JSON.stringify(keywords));
 
-		}else{
+        } else {
 
-			localStorage.setItem('keywords',JSON.stringify([keyword]));
+            localStorage.setItem('keywords', JSON.stringify([keyword]));
 
-		}
+        }
 
-		location.href = "search-list.html?key="+keyword;
-
-
-	});
+        location.href = "search-list.html?key=" + keyword;
 
 
-	if(localStorage.getItem('keywords')){
+    });
 
-		var keywords = JSON.parse(localStorage.getItem('keywords'));
 
-		$('#historySearch').html(template('historySearchTpl',{data:keywords}));
+    if (localStorage.getItem('keywords')) {
 
-	}
+        var keywords = JSON.parse(localStorage.getItem('keywords'));
 
-	$('#clearHistory').on('tap',function(){
+        $('#historySearch').html(template('historySearchTpl', { data: keywords }));
 
-		localStorage.removeItem('keywords');
+    }
 
-		$('#historySearch').html('');
+    $('#clearHistory').on('tap', function() {
 
-	})
+        localStorage.removeItem('keywords');
+
+        $('#historySearch').html('');
+
+    })
 
 });
