@@ -34,18 +34,23 @@
 .container .search .title {
   padding-bottom: 10px;
 }
-.container .search .search-bar {
-  text-align: center;
-  /* width:100%; */
-  background: #efeff4;
-  padding: 8px 0;
-  font-size: 14px;
-  margin-bottom: 15px;
-}
-.container .search #refresh {
+#refreshContainer {
   position: absolute;
   left: 0;
   width: 100%;
   top: 44px;
   bottom: 50px;
+}
+#refreshContainer .filter {
+  text-align: center;
+  /* width:100%; */
+  background: #efeff4;
+  padding: 6px 0;
+  font-size: 12px;
+  margin: 10px 10px;
+  margin-bottom: 15px;
+  color: #333;
+}
+#refreshContainer .mui-icon-arrowdown {
+  font-size: 12px;
 }
