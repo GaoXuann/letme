@@ -25,15 +25,15 @@ $(function() {
                 $('#login-btn').html("正在登录...");
             },
             success: function(res) {
-                // console.log(res);
-                if (res) {
+                console.log(res);
+                if (res.success) {
                     mui.toast("登录成功");
 
                     $('#login-btn').html("登录");
-
-                    setTimeout(function() {
-                        location.href = "user.html";
-                    }, 2000);
+                    location.href = 'user.html';
+                    // setTimeout(function() {
+                    //     location.href = "user.html";
+                    // }, 2000);
                 }
             }
         })
