@@ -57,6 +57,7 @@ $(function() {
                 break;
             }
         }
+        // 进入编辑页面
         location.href = "addAddress.html?isEdit=1"
     })
 })
