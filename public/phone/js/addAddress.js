@@ -1,12 +1,21 @@
 $(function() {
-    //将地址页面的数据渲染到添加地址页面
-    if (localStorage.getItem('editAddress')) {
-        var address = JSON.parse(localStorage.getItem('editAddress'));
-        console.log(address);
-        var html = template('editTpl', address);
-        console.log(html);
+    //截取Edit后面的数字判断是编辑还是添加
+    var isEdit = Number(getUrl(location.href, 'isEdit'));
+    //进入编辑界面
+    if (isEdit) {
+        //将地址页面的数据渲染到添加地址页面
+        if (localStorage.getItem('editAddress')) {
+            var address = JSON.parse(localStorage.getItem('editAddress'));
+            console.log(address);
+            var html = template('editTpl', address);
+            console.log(html);
+            $('#editForm').html(html);
+        }
+    } else {
+        var html = template('editTpl', {});
         $('#editForm').html(html);
     }
+
 
     var picker = new mui.PopPicker({
         layer: 3
@@ -20,7 +29,6 @@ $(function() {
         })
     })
 
-    //点击确认按钮将添加的地址添加到页面
     $('#addAddress').on('tap', function() {
         var userName = $('#username').val();
         var postCode = $('#postCode').val();
@@ -40,29 +48,28 @@ $(function() {
             recipients: userName,
             postcode: postCode
         };
-        //地址添加
-        $.ajax({
-                type: 'post',
-                url: '/address/addAddress',
-                data: data,
-                success: function(res) {
-                    console.log(res);
-                    if (res.success) {
-                        mui.toast('添加地址成功');
-                        location.href = 'address.html';
-                    }
-                }
-            })
-            //修改地址
+        //修改页面
+        if (isEdit) {
+            var url = "/address/updateAddress"
+            data.id = address.id;
+        } else {
+            //添加页面
+            var url = "/address/addAddress"
+        }
         $.ajax({
             type: 'post',
-            url: '/address/updateAddress',
+            url: url,
             data: data,
             success: function(res) {
                 console.log(res);
                 if (res.success) {
-                    mui.toast('修改添加地址成功');
-                    location.href = 'address.html';
+                    if (isEdit) {
+                        mui.toast('修改地址成功');
+                        location.href = 'address.html';
+                    } else {
+                        mui.toast('添加地址成功');
+                        location.href = 'address.html';
+                    }
                 }
             }
         })
