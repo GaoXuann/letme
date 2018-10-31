@@ -55,7 +55,7 @@ html,
 }
 
 .aside .navs li a+ul {
-    display: none;
+    /* display: none; */
     overflow: hidden;
 }
 
@@ -73,6 +73,11 @@ html,
     background-color: #243443;
     text-decoration: none;
 }
+
+
+/* .aside .navs li a:hover+ul {
+    display: block;
+} */
 
 .aside .navs a+ul a {
     padding-left: 46px;
@@ -127,31 +132,30 @@ html,
     border-radius: 4px;
 }
 
-
-.main .body{
-	margin:20px;
-	background:#FFF;
-	padding:20px;
+.main .body {
+    margin: 20px;
+    background: #FFF;
+    padding: 20px;
 }
 
-.main .body .page{
-    padding-top:25px;
+.main .body .page {
+    padding-top: 25px;
 }
 
 .main .body .table,
-.main .body .table th{
-	text-align:center;
-	margin-bottom:0;
+.main .body .table th {
+    text-align: center;
+    margin-bottom: 0;
 }
 
-.main .body .table td{
-	vertical-align:middle;
+.main .body .table td {
+    vertical-align: middle;
 }
 
-.main .body .operation{
-	margin-bottom:20px;
+.main .body .operation {
+    margin-bottom: 20px;
 }
 
-.main .body .show{
-	padding-top:15px;
+.main .body .show {
+    padding-top: 15px;
 }
