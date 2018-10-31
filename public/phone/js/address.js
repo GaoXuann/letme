@@ -49,7 +49,7 @@ $(function() {
     $('#address-box').on('tap', '.edit-btn', function() {
         //获取编辑按钮上的id
         var id = $(this).data('id');
-        alert(1);
+        // alert(1);
         console.log(address);
         for (var i = 0; i < address.length; i++) {
             if (address[i].id == id) {
@@ -57,6 +57,7 @@ $(function() {
                 break;
             }
         }
+        // 进入编辑页面
         location.href = "addAddress.html?isEdit=1"
     })
 })

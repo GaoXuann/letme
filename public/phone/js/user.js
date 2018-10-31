@@ -9,7 +9,7 @@ $(function() {
 
             //判断用户是否登录
             if (res.error && res.error == 400) {
-                // location.href = 'login.html';
+                location.href = 'login.html';
             }
             userInfo = res;
             console.log(userInfo);
